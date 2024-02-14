@@ -2,10 +2,12 @@ import React from 'react'
 import Memedate from './Memedate'
 
 const Content = ({btn}) => {
+    const [memeImage, setMemeImage] = React.useState(); 
+
     function getMemeImg() {
-        const memesArr =  Memedate.data.memes;
+        const memesArr = Memedate.data.memes;
         const randomNumber = Math.floor(Math.random() * memesArr.length);
-        const {url} = memesArr[randomNumber];
+        setMemeImage(memesArr[randomNumber].url);
     }
 
     return (
@@ -18,7 +20,7 @@ const Content = ({btn}) => {
             <button type="button" onClick={getMemeImg} className='btn'>{btn}</button>
 
             <div className="image-content">
-                <img src="../assets/images/memeimg.png" alt="meme image" />
+                <img src={memeImage} />
             </div>
         </div>
     )

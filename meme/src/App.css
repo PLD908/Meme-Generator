@@ -49,9 +49,17 @@ button {
   background-color: aqua;
   border: none;
   border-radius: 1em;
+  cursor: pointer;
 }
 
 .image-content img {
-  width: 90%;
+  width: 60%;
   margin-top: 1.5em;
+}
+
+
+@media (min-width: 700px) {
+  .content{
+    width: 50%;
+  }
 }
